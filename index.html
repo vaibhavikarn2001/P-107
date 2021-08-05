@@ -1,7 +1,6 @@
- 
 <html>
   <head>
-    <title>Emotion To Emoji</title>
+    <title>Hand gesture recognizer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -9,36 +8,50 @@
 
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Sacramento&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
+
   <div class="container">
   
     <center>
-    <h3 class="btn btn-warning heading">EMOTION TO EMOJI APP  <br><br>
-      <span>&#128522;</span>
-      <span>&#128512;</span>
-      <span>&#128532;</span>
-      <span>&#128546;</span>
-      <span>&#128545;</span>
-      <span>&#128548;</span>
+    <h1 class="btn btn-warning heading">Hand Gesture Recognizer <br><br>
+      <span>&#9996;</span>
+      <span>&#128074;</span>
+      <span>&#128076;</span>
+      <span>&#128077;</span>
+      <span>&#128079;</span>
+      <span>&#129304;</span>
       
     </h3>
    
-     
+     <img class="img-responsive" style="height:330px; width:380px; border-radius:30px; margin-top:10px; margin-bottom:10px;" src="stock-vector-negative-gestures-flat-vector-illustrations-set-finger-language-non-verbal-communication-people-1563486727.jpg">
   
-      <p style="font-size: 22px;">Take your selfie to generate emoji
-      	<br>
-        <b style="color: yellow">Are you Happy?</b>
-        <br>
-        <b style="color: black">Are you Sad?</b>
-        <br>
-        <b style="color: red">Are you Angry?</b>
-        <br>
+      <p style="font-size: 22px;">On the following gestures the model is trained:
+      <span>
+        <b>&#9996;,</b></span>	
+        
+        <span><b >&#128074; , </b></span>
+        
+        
+       <span><b >&#128076;, </b></span> 
+        
+        <span><b>&#128077;,</b></span>
+        
+        <span>        <b>&#129304;</b>
+        </span>
       </p>
-
+<br>
+<br>
       <div class="col-md-4 col-sm-12 col-xs-12">
         <label>Webcam View</label>
       <div id="camera"></div>
@@ -46,13 +59,11 @@
       <button onclick="take_snapshot();" class="btn btn-warning">Capture Image</button>
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12">
-     <label>Prediction 1-
+     <label>Prediction -
       </label>
       <p class="emotion_name" id="result_emotion_name"></p>
       <p class="emoji" id="update_emoji"></p>
-      <label>Prediction 2-</label>
-      <p class="emotion_name" id="result_emotion_name2"></p>
-      <p class="emoji" id="update_emoji2"></p>
+      
       </div>
      <div class="col-md-4 col-sm-12 col-xs-12">
 
@@ -60,7 +71,7 @@
       <div id="result"></div>
       <br>
       <br>
-      <button onclick="check();" class="btn btn-success">Predict Emotion</button>
+      <button onclick="check();" class="btn btn-primary">Predict Emotion</button>
      </div>
     </center>
 
